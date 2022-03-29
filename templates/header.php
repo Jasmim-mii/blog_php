@@ -13,11 +13,11 @@
     <!-- GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.gstatic.com " crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,300&display=swap" rel="stylesheet"> 
-    <title>Blog tecnologia</title>
+    <title>Blog Dev&Tech</title>
 </head>
 <body>
     <header>
-        <a href="<?=$BASE_URL?>" id="logo"><img src="<?=$BASE_URL?>/img/logo.svg" alt="Blog tecnologia"></a>
+        <a href="<?=$BASE_URL?>" id="logo"><img src="<?=$BASE_URL?>/img/logo.svg" alt="Blog Dev&Tech"></a>
         <nav>
             <ul id="navbar">
                 <li><a href="<?=$BASE_URL?>index.php" class="nav-link">Home</a></li>
