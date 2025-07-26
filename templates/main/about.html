@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section bg-gradient-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-4">{{ title }}</h1>
+                <p class="lead">
+                    Conheça nossa história e a equipe por trás dos projetos
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold mb-4">Nossa História</h2>
+                <p class="lead text-muted mb-4">
+                    Fundada em 2019, a DevStudio nasceu da paixão por tecnologia e inovação. 
+                    Começamos como uma pequena equipe de desenvolvedores apaixonados e hoje 
+                    somos referência em desenvolvimento web e mobile.
+                </p>
+                <p class="text-muted mb-4">
+                    Nossa missão é transformar ideias em soluções digitais que impulsionam 
+                    negócios e melhoram a vida das pessoas. Acreditamos que a tecnologia 
+                    deve ser acessível, intuitiva e poderosa.
+                </p>
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="achievement">
+                            <h4 class="fw-bold text-primary">50+</h4>
+                            <p class="text-muted mb-0">Projetos Entregues</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="achievement">
+                            <h4 class="fw-bold text-success">30+</h4>
+                            <p class="text-muted mb-0">Clientes Satisfeitos</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="achievement">
+                            <h4 class="fw-bold text-info">5+</h4>
+                            <p class="text-muted mb-0">Anos de Experiência</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="achievement">
+                            <h4 class="fw-bold text-warning">100%</h4>
+                            <p class="text-muted mb-0">Compromisso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="about-image text-center">
+                    <div class="bg-light rounded-3 p-5">
+                        <i class="fas fa-code fa-6x text-primary mb-3"></i>
+                        <h4 class="mb-3">Inovação e Qualidade</h4>
+                        <p class="text-muted">
+                            Utilizamos as tecnologias mais modernas e seguimos as melhores 
+                            práticas para entregar soluções excepcionais.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Nossos Valores</h2>
+                <p class="lead text-muted">
+                    Princípios que guiam nosso trabalho e relacionamento com clientes
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="value-card text-center p-4">
+                    <div class="value-icon mb-3">
+                        <i class="fas fa-lightbulb fa-3x text-primary"></i>
+                    </div>
+                    <h5>Inovação</h5>
+                    <p class="text-muted">
+                        Sempre buscamos as melhores soluções e tecnologias para 
+                        resolver os desafios dos nossos clientes.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="value-card text-center p-4">
+                    <div class="value-icon mb-3">
+                        <i class="fas fa-handshake fa-3x text-success"></i>
+                    </div>
+                    <h5>Transparência</h5>
+                    <p class="text-muted">
+                        Mantemos nossos clientes informados sobre cada etapa do 
+                        projeto, desde o planejamento até a entrega.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="value-card text-center p-4">
+                    <div class="value-icon mb-3">
+                        <i class="fas fa-star fa-3x text-warning"></i>
+                    </div>
+                    <h5>Qualidade</h5>
+                    <p class="text-muted">
+                        Não abrimos mão da excelência. Cada linha de código é 
+                        escrita com cuidado e atenção aos detalhes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Nossa Equipe</h2>
+                <p class="lead text-muted">
+                    Profissionais apaixonados por tecnologia e inovação
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            {% for member in team %}
+            <div class="col-lg-4 col-md-6">
+                <div class="team-card card h-100 border-0 shadow-lg text-center">
+                    <div class="card-body p-4">
+                        <div class="team-avatar mb-3">
+                            <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                                <i class="fas fa-user fa-3x text-muted"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title mb-2">{{ member.name }}</h5>
+                        <p class="text-primary fw-bold mb-3">{{ member.role }}</p>
+                        <p class="card-text text-muted mb-3">{{ member.bio }}</p>
+                        
+                        <div class="team-skills mb-3">
+                            <div class="d-flex flex-wrap justify-content-center gap-2">
+                                {% if member.role == "Desenvolvedor Full Stack" %}
+                                <span class="badge bg-primary">React</span>
+                                <span class="badge bg-success">Node.js</span>
+                                <span class="badge bg-info">Python</span>
+                                {% elif member.role == "UX/UI Designer" %}
+                                <span class="badge bg-primary">Figma</span>
+                                <span class="badge bg-success">Adobe XD</span>
+                                <span class="badge bg-info">Sketch</span>
+                                {% elif member.role == "Desenvolvedor Mobile" %}
+                                <span class="badge bg-primary">React Native</span>
+                                <span class="badge bg-success">Flutter</span>
+                                <span class="badge bg-info">Swift</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="team-social">
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Culture Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="culture-image text-center">
+                    <div class="bg-primary rounded-3 p-5 text-white">
+                        <i class="fas fa-users fa-4x mb-3"></i>
+                        <h4 class="mb-3">Cultura Colaborativa</h4>
+                        <p>
+                            Acreditamos que as melhores soluções nascem da colaboração 
+                            e do trabalho em equipe.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold mb-4">Nossa Cultura</h2>
+                <p class="lead text-muted mb-4">
+                    Criamos um ambiente onde a criatividade e a inovação florescem. 
+                    Nossa equipe é diversa, inclusiva e sempre em busca de aprendizado.
+                </p>
+                
+                <div class="culture-features">
+                    <div class="culture-item d-flex align-items-center mb-3">
+                        <i class="fas fa-check-circle text-success me-3"></i>
+                        <span>Flexibilidade de horários e trabalho remoto</span>
+                    </div>
+                    <div class="culture-item d-flex align-items-center mb-3">
+                        <i class="fas fa-check-circle text-success me-3"></i>
+                        <span>Investimento contínuo em capacitação</span>
+                    </div>
+                    <div class="culture-item d-flex align-items-center mb-3">
+                        <i class="fas fa-check-circle text-success me-3"></i>
+                        <span>Ambiente colaborativo e sem hierarquias rígidas</span>
+                    </div>
+                    <div class="culture-item d-flex align-items-center mb-3">
+                        <i class="fas fa-check-circle text-success me-3"></i>
+                        <span>Foco em resultados e qualidade de vida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-4">Quer fazer parte da nossa história?</h2>
+        <p class="lead mb-4">
+            Vamos trabalhar juntos para criar algo incrível
+        </p>
+        <a href="{% url 'main:contact' %}" class="btn btn-warning btn-lg">
+            <i class="fas fa-paper-plane me-2"></i>Fale Conosco
+        </a>
+    </div>
+</section>
+{% endblock %}

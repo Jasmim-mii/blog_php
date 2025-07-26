@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section bg-gradient-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-4">{{ title }}</h1>
+                <p class="lead">
+                    Utilizamos as ferramentas mais modernas e eficientes do mercado
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technologies Section -->
+<section class="py-5">
+    <div class="container">
+        {% for category_key, category in tech_categories.items %}
+        <div class="tech-category mb-5">
+            <div class="row text-center mb-4">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-6 fw-bold mb-3">{{ category.name }}</h2>
+                    <p class="lead text-muted">
+                        {% if category_key == 'frontend' %}
+                        Tecnologias para criar interfaces modernas e interativas
+                        {% elif category_key == 'backend' %}
+                        Linguagens e frameworks para desenvolvimento server-side
+                        {% elif category_key == 'mobile' %}
+                        Ferramentas para desenvolvimento de aplicativos móveis
+                        {% elif category_key == 'database' %}
+                        Sistemas de gerenciamento de banco de dados
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                {% for tech in category.technologies %}
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="tech-card card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-4">
+                            <div class="tech-icon mb-3">
+                                <i class="{{ tech.icon }} fa-4x" style="color: {{ tech.color }};"></i>
+                            </div>
+                            <h5 class="card-title">{{ tech.name }}</h5>
+                            <div class="tech-description">
+                                {% if tech.name == 'HTML5' %}
+                                <p class="text-muted small">Estrutura semântica e acessível</p>
+                                {% elif tech.name == 'CSS3' %}
+                                <p class="text-muted small">Estilização moderna e responsiva</p>
+                                {% elif tech.name == 'JavaScript' %}
+                                <p class="text-muted small">Interatividade e dinamismo</p>
+                                {% elif tech.name == 'React' %}
+                                <p class="text-muted small">Componentes reutilizáveis</p>
+                                {% elif tech.name == 'Vue.js' %}
+                                <p class="text-muted small">Framework progressivo</p>
+                                {% elif tech.name == 'Angular' %}
+                                <p class="text-muted small">Framework completo</p>
+                                {% elif tech.name == 'Python' %}
+                                <p class="text-muted small">Simplicidade e produtividade</p>
+                                {% elif tech.name == 'Node.js' %}
+                                <p class="text-muted small">JavaScript no servidor</p>
+                                {% elif tech.name == 'Java' %}
+                                <p class="text-muted small">Robustez e escalabilidade</p>
+                                {% elif tech.name == 'PHP' %}
+                                <p class="text-muted small">Desenvolvimento web dinâmico</p>
+                                {% elif tech.name == 'Go' %}
+                                <p class="text-muted small">Performance e concorrência</p>
+                                {% elif tech.name == 'C#' %}
+                                <p class="text-muted small">Desenvolvimento .NET</p>
+                                {% elif tech.name == 'React Native' %}
+                                <p class="text-muted small">Apps multiplataforma</p>
+                                {% elif tech.name == 'Flutter' %}
+                                <p class="text-muted small">UI nativa e performática</p>
+                                {% elif tech.name == 'Swift' %}
+                                <p class="text-muted small">Desenvolvimento iOS</p>
+                                {% elif tech.name == 'Kotlin' %}
+                                <p class="text-muted small">Desenvolvimento Android</p>
+                                {% elif tech.name == 'PostgreSQL' %}
+                                <p class="text-muted small">Banco relacional avançado</p>
+                                {% elif tech.name == 'MySQL' %}
+                                <p class="text-muted small">Banco de dados confiável</p>
+                                {% elif tech.name == 'MongoDB' %}
+                                <p class="text-muted small">Banco NoSQL flexível</p>
+                                {% elif tech.name == 'Redis' %}
+                                <p class="text-muted small">Cache e armazenamento rápido</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Por que escolher nossas tecnologias?</h2>
+                <p class="lead text-muted">
+                    Selecionamos cuidadosamente cada ferramenta para garantir os melhores resultados
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-rocket fa-3x text-primary"></i>
+                    </div>
+                    <h5>Performance</h5>
+                    <p class="text-muted">
+                        Tecnologias otimizadas para velocidade e eficiência
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-shield-alt fa-3x text-success"></i>
+                    </div>
+                    <h5>Segurança</h5>
+                    <p class="text-muted">
+                        Ferramentas com foco em proteção e boas práticas
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-users fa-3x text-info"></i>
+                    </div>
+                    <h5>Comunidade</h5>
+                    <p class="text-muted">
+                        Tecnologias com suporte ativo e documentação rica
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-4">Pronto para usar essas tecnologias?</h2>
+        <p class="lead mb-4">
+            Vamos criar algo incrível juntos com as melhores ferramentas do mercado
+        </p>
+        <a href="{% url 'main:contact' %}" class="btn btn-warning btn-lg">
+            <i class="fas fa-paper-plane me-2"></i>Começar Projeto
+        </a>
+    </div>
+</section>
+{% endblock %}
