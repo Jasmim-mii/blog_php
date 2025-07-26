@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section bg-gradient-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-4">{{ title }}</h1>
+                <p class="lead">
+                    Oferecemos soluções completas para transformar sua presença digital
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            {% for service in services %}
+            <div class="col-lg-6">
+                <div class="service-card card h-100 border-0 shadow-lg">
+                    <div class="card-body p-5">
+                        <div class="service-icon mb-4">
+                            <i class="{{ service.icon }} fa-4x text-primary"></i>
+                        </div>
+                        <h3 class="card-title mb-3">{{ service.name }}</h3>
+                        <p class="card-text text-muted mb-4">{{ service.description }}</p>
+                        
+                        <h6 class="fw-bold mb-3">Tecnologias utilizadas:</h6>
+                        <div class="tech-tags mb-4">
+                            {% for tech in service.technologies %}
+                            <span class="badge bg-light text-dark me-2 mb-2">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="service-features">
+                            <ul class="list-unstyled">
+                                {% if service.name == "Desenvolvimento Web" %}
+                                <li><i class="fas fa-check text-success me-2"></i>Sites responsivos</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Otimização SEO</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Integração com APIs</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Manutenção e suporte</li>
+                                {% elif service.name == "Aplicativos Mobile" %}
+                                <li><i class="fas fa-check text-success me-2"></i>Apps nativos e híbridos</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Publicação nas lojas</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Push notifications</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Atualizações e manutenção</li>
+                                {% elif service.name == "Backend Development" %}
+                                <li><i class="fas fa-check text-success me-2"></i>APIs RESTful</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Autenticação segura</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Banco de dados otimizado</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Monitoramento e logs</li>
+                                {% elif service.name == "E-commerce" %}
+                                <li><i class="fas fa-check text-success me-2"></i>Catálogo de produtos</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Gateway de pagamento</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Gestão de estoque</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Relatórios de vendas</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        
+                        <a href="{% url 'main:contact' %}" class="btn btn-primary mt-3">
+                            <i class="fas fa-paper-plane me-2"></i>Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Nosso Processo</h2>
+                <p class="lead text-muted">
+                    Metodologia ágil e transparente para entregar resultados excepcionais
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-3">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fas fa-lightbulb fa-2x"></i>
+                        </div>
+                    </div>
+                    <h5>1. Descoberta</h5>
+                    <p class="text-muted">Entendemos suas necessidades e objetivos</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-3">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fas fa-pencil-ruler fa-2x"></i>
+                        </div>
+                    </div>
+                    <h5>2. Planejamento</h5>
+                    <p class="text-muted">Criamos a arquitetura e design da solução</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-3">
+                        <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fas fa-code fa-2x"></i>
+                        </div>
+                    </div>
+                    <h5>3. Desenvolvimento</h5>
+                    <p class="text-muted">Implementamos com as melhores práticas</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-3">
+                        <div class="bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                            <i class="fas fa-rocket fa-2x"></i>
+                        </div>
+                    </div>
+                    <h5>4. Entrega</h5>
+                    <p class="text-muted">Deploy e lançamento da solução</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-4">Vamos trabalhar juntos?</h2>
+        <p class="lead mb-4">
+            Entre em contato e vamos discutir como podemos ajudar seu projeto
+        </p>
+        <a href="{% url 'main:contact' %}" class="btn btn-warning btn-lg">
+            <i class="fas fa-paper-plane me-2"></i>Iniciar Conversa
+        </a>
+    </div>
+</section>
+{% endblock %}
